@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Notes App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__main-texgt">Add your notes!</h1>
+            <form action="" class="form">
+                <div class="form__input-container">
+                    <p class="form__error"></p>
+                    <input type="text" class="form__input">
+                    <button class="form__button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="form__select-container">
+                    <select name="todos" class="form__select-input">
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="uncompleted">Uncompleted</option>
+                    </select>
+                </div>
+            </form>
+            <div class="header__progress-bar">
+                <div class="header__progress-bar header__progress-bar--percent">
+                    0%
+                </div>
+            </div>
+            <div class="header__tasks-number">
+                <p class="header__all-tasks">All tasks: <span>0</span></p>
+                <p class="header__completed-tasks">Completed tasks: <span></span></p>
+                <p class="header__uncompleted-tasks">Uncompleted tasks: <span></span></p>
+            </div>
+        </header>
+        <main class="main">
+            <div class="todo-container">
+                <ul class="todo-list">
+                </ul>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
