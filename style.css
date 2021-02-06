@@ -23,6 +23,10 @@ button{
     outline:none;
 }
 
+::selection {
+    background: #061557;
+  }
+  
 body{
     background-image: linear-gradient(  #1ca6be 0, #061557 100%);
     min-height: 100vh;
@@ -330,6 +334,10 @@ body{
 @media screen and (max-width: 576px) {
     .container{
         margin: 0 15px;
+    }
+
+    .main{
+        margin-bottom: 15px;    
     }
 
     .header{
