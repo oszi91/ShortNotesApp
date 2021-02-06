@@ -333,7 +333,7 @@ body{
     }
 
     .header{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     } 
 
     .header__main-text{
@@ -357,7 +357,7 @@ body{
 
     .form__button{
         height: 40px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .form__dropdown-container{
