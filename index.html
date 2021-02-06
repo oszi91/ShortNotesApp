@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1 class="header__main-texgt">Add your notes!</h1>
+            <h1 class="header__main-text">Add your notes!</h1>
             <form action="" class="form">
                 <div class="form__input-container">
                     <p class="form__error"></p>
@@ -23,12 +23,18 @@
                         <i class="fas fa-plus"></i>
                     </button>
                 </div>
-                <div class="form__select-container">
-                    <select name="todos" class="form__select-input">
-                        <option value="all">All</option>
-                        <option value="completed">Completed</option>
-                        <option value="uncompleted">Uncompleted</option>
-                    </select>
+                <div class="form__dropdown-container">
+                    <div class="form__dropdown">
+                        <p class="form__dropdown-main-option">All</p>
+                        <ul class="form__dropdown-list">
+                            <li class="form__dropdown-option" data-value="all">All</li>
+                            <li class="form__dropdown-option" data-value="completed">Completed</li>
+                            <li class="form__dropdown-option" data-value="uncompleted">Uncompleted</li>
+                        </ul>
+                    </div>
+                    <div class="form__dropdown-btn">
+                        <i class="fas fa-caret-down"></i>
+                    </div>
                 </div>
             </form>
             <div class="header__progress-bar">

@@ -120,46 +120,81 @@ body{
     border: none;
     color: white;
     font-size: 2.5rem;
-    background-color:rgb(84, 69, 141);
+    background-color:#061557;
     transition: .2s ease-in;
     cursor: pointer;
 }
 
 .form__button:hover{
     background-color: white;
-    color: rgb(84, 69, 141);
+    color: #061557;
 }
 
-.form__select-container{
-    margin-left: 3%;
-    position: relative;
-    overflow: hidden;
-}
-
-.form__select-container::after{
-    content: "\25BC";
-    pointer-events: none;
-    background-color: rgb(84, 69, 141);
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 1.5rem;
-    height: 100%;
-    padding: 20px;
-    transition: .2s ease-in;
-}
-
-.form__select-container:hover::after{
+.form__dropdown-container{
+    display: flex;
+    justify-content: space-between;
+    position:relative;
     background-color: white;
-    color: rgb(84, 69, 141);
+    height: 60px;
+    width: 200px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 5%;
 }
 
-.form__select-input{
-    cursor: pointer;
-    height: 60px;
-    padding: 15px;
+.form__dropdown{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: black;
+}
+
+.form__dropdown-main-option{
+    padding: 10px;
+}
+
+.form__dropdown-list{
+    display: none;
+    position: absolute;
+    top: 100%;
+    list-style: none;
+    background-color: white;
     width: 200px;
-    font-size: 1.3rem;
+    box-shadow: 0 6px 6px 0 rgb(0 0 0 / 12%);
+    border-radius: 0 0 7px 7px;
+    border-top: 1px solid rgb(238, 238, 238);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.form__dropdown-btn--is-open{
+    display: block;
+}
+
+.form__dropdown-option{
+    padding: 10px;
+}
+
+.form__dropdown-option:hover{
+    color: white;
+    background-color: #061557;
+}
+
+.form__dropdown-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #061557;
+}
+
+.form__dropdown-btn--rotate-arrow{
+    transform: rotate(180deg);
+}
+
+.fa-caret-down{
+    padding: 10px;
+    font-size: 3rem;
 }
 
 .main{
@@ -242,8 +277,6 @@ body{
     text-decoration: line-through;
 }
 
-
-
 .todo-list__pin{
     order: -1;
     transform-origin: 200% 50%;
@@ -303,9 +336,14 @@ body{
         font-size: 1.5rem;
     } 
 
+    .header__main-text{
+        margin-top: 15px;
+    }
+
     .form{
         flex-direction: column;
         font-size: 1rem;
+        margin: 20px 0;
     }
     
     .form__input-container{
@@ -322,19 +360,14 @@ body{
         font-size: 1.5rem;
     }
 
-    .form__select-container{
+    .form__dropdown-container{
         margin: 0;
-    }
-
-    .form__select-input{
         height: 40px;
-        padding: 5px;
         font-size: 1rem;
     }
 
-    .form__select-container::after{
-        font-size: 1rem;
-        padding: 15px;
+    .fa-caret-down {
+        font-size: 1.5rem;
     }
 
     .todo-list__item-container{
@@ -351,3 +384,7 @@ body{
         width: 40%;
     }
 }
+
+
+
+

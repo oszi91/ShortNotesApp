@@ -3,6 +3,10 @@
     const todoList = document.querySelector('.todo-list');
     const selectToDo = document.querySelector('.form__select-input');
 
+    const dropdownList = document.querySelector('.form__dropdown-list');
+    const dropdownMainOption = document.querySelector('.form__dropdown-main-option');
+    const dropdownContainer = document.querySelector('.form__dropdown-container');
+
     const error = document.querySelector('.form__error');
     const allTasksText = document.querySelector('.header__all-tasks > span');
     const completedTasksText = document.querySelector('.header__completed-tasks > span');
@@ -108,18 +112,26 @@
         };
     };
 
+    const dropdownIsOpen = () => {
+        const dropdownBtn = document.querySelector('.form__dropdown-btn');
+        dropdownList.classList.toggle('form__dropdown-btn--is-open');
+        dropdownBtn.classList.toggle('form__dropdown-btn--rotate-arrow');
+    };
+
     const selectTypeOfTasks = e => {
         const selectTasks = [...todoList.children];
-        const typeOfTasks = e.target.value;
+        const typeOfTasks = e.target.dataset.value;
 
         selectTasks.forEach(task => {
             const taskComplete = task.children[0];
 
             switch (typeOfTasks) {
                 case 'all':
+                    dropdownMainOption.textContent = 'All';
                     task.style.display = 'flex';
                     break;
                 case 'completed':
+                    dropdownMainOption.textContent = 'Completed';
                     if (taskComplete.classList.contains('todo-list__item-name--done')) {
                         task.style.display = 'flex'
                     } else {
@@ -127,6 +139,7 @@
                     }
                     break;
                 case 'uncompleted':
+                    dropdownMainOption.textContent = 'Uncompleted';
                     if (!taskComplete.classList.contains('todo-list__item-name--done')) {
                         task.style.display = 'flex'
                     } else {
@@ -136,6 +149,8 @@
             }
         })
     };
+
+    dropdownList.addEventListener('click', selectTypeOfTasks);
 
     // Local Storage
 
@@ -232,4 +247,6 @@
     document.addEventListener('DOMContentLoaded', getTasksFromLocalStorage);
     form.addEventListener('submit', addTaskToList);
     todoList.addEventListener('click', deleteOrCompleteTask);
-    selectToDo.addEventListener('click', selectTypeOfTasks);
+    dropdownContainer.addEventListener('click', dropdownIsOpen);
+    
+
